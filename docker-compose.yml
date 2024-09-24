@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  mousemover:
+    build: .
+    container_name: mousemover
+    restart: unless-stopped
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
